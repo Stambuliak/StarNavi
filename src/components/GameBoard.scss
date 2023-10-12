@@ -1,0 +1,104 @@
+$primary-size: 600px;
+
+.square-grid {
+  display: grid;
+  grid-gap: 0;
+  grid-template-columns: repeat(var(--selectedOption), 1fr);
+  grid-template-rows: repeat(var(--selectedOption), 1fr);
+  width: $primary-size;
+  height: $primary-size;
+}
+
+.square {
+  background-color: white;
+  border: 1px solid black;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: min(100%, calc(800px / var(--selectedOption))); 
+  height: min(100%, calc(800px / var(--selectedOption)));
+  transition: background-color 0.3s ease-in-out;
+}
+
+
+.square:hover {
+  cursor: pointer;
+}
+
+
+.activeSquare {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: aqua;
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.page {
+  box-sizing: border-box;
+  padding: 100px 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; 
+  gap: 100px;
+}
+
+.field-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.title {
+  text-align: center;
+  margin: 0 0 10px;
+}
+
+.start {
+  cursor: pointer;
+  padding: 10px 40px;
+  margin-right: 10px;
+}
+
+.clear {
+  margin-right: 0px;
+}
+
+.list-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: $primary-size;
+}
+
+.select {
+  padding: 10px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: $primary-size;
+  align-content: center;
+  column-gap: 6px;
+  row-gap: 6px;
+}
+
+.list-element {
+  border-radius: 5px;
+  text-align: center;
+  background-color: aqua;
+  width: 50%;
+  box-sizing: border-box; 
+}
+
