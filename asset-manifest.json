@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/StarNavi/static/css/main.c4207f40.css",
+    "main.js": "/StarNavi/static/js/main.a0e64ffc.js",
+    "index.html": "/StarNavi/index.html",
+    "main.c4207f40.css.map": "/StarNavi/static/css/main.c4207f40.css.map",
+    "main.a0e64ffc.js.map": "/StarNavi/static/js/main.a0e64ffc.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c4207f40.css",
+    "static/js/main.a0e64ffc.js"
+  ]
+}
