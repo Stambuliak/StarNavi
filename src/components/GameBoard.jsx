@@ -100,7 +100,7 @@ export const GameBoard = () => {
         <div className='field-wrapper'>
           <div>
             <select onChange={handleSelectChange} className='select'>
-              <option value="0" disabled selected>Select an option</option>
+              <option value="0" disabled selected>Pick Mode</option>
               {modes.map((mode) => (
                 <option 
                   key={mode.id} 
@@ -117,14 +117,14 @@ export const GameBoard = () => {
                 start();
                 setIsSizeChosen(true);
               }}
-              className='start'
+              className={!optionChosen ? 'start' : ' start start-pressed'}
               disabled = {!optionChosen}
             >
               Start
             </button>
             <button 
               onClick={clear} 
-              className='start clear'
+              className={!handleClear() ? 'start clear' : ' start start-pressed'}
               disabled = {!handleClear()}
             >
               Clear

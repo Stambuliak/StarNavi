@@ -64,9 +64,21 @@ $primary-size: 600px;
 }
 
 .start {
-  cursor: pointer;
+  border-radius: 5px;
   padding: 10px 40px;
   margin-right: 10px;
+
+  transition: 0.3s ease-in-out;
+
+  &-pressed {
+    cursor: pointer;
+    border-color: aqua;
+
+    &:hover {
+      scale: 1.1;
+      background-color: aqua;
+    }
+  }
 }
 
 .clear {
