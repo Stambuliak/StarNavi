@@ -1,4 +1,4 @@
-$primary-size: 600px;
+$primary-size: 800px;
 
 .square-grid {
   display: grid;
@@ -10,8 +10,9 @@ $primary-size: 600px;
 }
 
 .square {
+  padding: 0;
   background-color: white;
-  border: 1px solid black;
+  border: 0.1px solid black;
   color: black;
   display: flex;
   justify-content: center;
@@ -42,6 +43,7 @@ $primary-size: 600px;
 }
 
 .page {
+  background-color:antiquewhite;
   box-sizing: border-box;
   padding: 100px 150px;
   display: flex;
