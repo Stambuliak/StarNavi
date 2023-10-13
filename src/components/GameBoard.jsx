@@ -14,8 +14,6 @@ export const GameBoard = () => {
 
   useEffect(() => {
     fetchData();
-    document.documentElement.style.setProperty('--selectedOption', selectedOption);
-    generateSquares(selectedOption)
   }, []);
 
   const handleClear = () => {
@@ -60,7 +58,9 @@ export const GameBoard = () => {
     const selectedOption = parseInt(event.target.value, 10);
     setOptionChosen(true)
     setIsSizeChosen(false)
-
+    generateSquares(0)
+    setSquareList([])
+    setSelectedCube([])
 
     setSelectedOption(selectedOption);
   };
@@ -111,7 +111,7 @@ export const GameBoard = () => {
               ))}
             </select>
           </div>
-          <div>
+          <div className='start_clear--button'>
             <button 
               onClick={() => {
                 start();
@@ -137,7 +137,7 @@ export const GameBoard = () => {
             >
               <button
                key={index} 
-                onClick={() => {
+                onMouseEnter={() => {
                 setSelectedItem(index);
                 handleAddSquare(index);
               }}

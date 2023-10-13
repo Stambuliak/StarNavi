@@ -1,12 +1,17 @@
-$primary-size: 800px;
+@mixin onTablet {
+  @media (max-width: 640px) {
+    @content;
+  }
+}
 
 .square-grid {
   display: grid;
+  box-sizing: content-box;
+  aspect-ratio: 1/1;
   grid-gap: 0;
   grid-template-columns: repeat(var(--selectedOption), 1fr);
   grid-template-rows: repeat(var(--selectedOption), 1fr);
-  width: $primary-size;
-  height: $primary-size;
+  width: 100%;
 }
 
 .square {
@@ -36,43 +41,52 @@ $primary-size: 800px;
 }
 
 .page-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  width: 65%;
 }
 
 .page {
-  background-color:antiquewhite;
-  box-sizing: border-box;
-  padding: 100px 150px;
+  width: 48em;
+  margin: 0 auto;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh; 
-  gap: 100px;
+  justify-content: space-between;
+  padding: 10rem 2rem 0;
+
+  @include onTablet() {
+    display: block;
+  }
+}
+
+.start_clear--button {
+  display: flex;
+  gap: 0.5rem;
 }
 
 .field-wrapper {
-  width: 100%;
   display: flex;
   justify-content: space-between;
   margin-bottom: 10px;
 }
 
 .title {
+  font-size: 2rem;
   text-align: center;
-  margin: 0 0 10px;
+  margin: 0 0 16px;
+  padding-top: 10px;
 }
 
 .start {
   border-radius: 5px;
-  padding: 10px 40px;
-  margin-right: 10px;
+  width: 7rem;
+  padding: 1rem 0;
+	background-color: #fff;
+  border-width: 0;
+  border-radius: 5px;
+  border: 2px solid aqua;
 
   transition: 0.3s ease-in-out;
 
   &-pressed {
+    background-color: aqua;
     cursor: pointer;
     border-color: aqua;
 
@@ -89,22 +103,25 @@ $primary-size: 800px;
 
 .list-wrapper {
   display: flex;
+  align-items: center;
   flex-direction: column;
   flex-wrap: wrap;
-  width: $primary-size;
+  width: 30%;
 }
 
 .select {
-  padding: 10px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border-radius: 5px;
+  border-color: aqua;
+  padding: 1rem 0.6rem;
+  width: 15rem;
 }
 
 .list {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
-  height: $primary-size;
   align-content: center;
-  column-gap: 6px;
   row-gap: 6px;
 }
 
@@ -112,7 +129,7 @@ $primary-size: 800px;
   border-radius: 5px;
   text-align: center;
   background-color: aqua;
-  width: 50%;
+  width: 15rem;
   box-sizing: border-box; 
 }
 
